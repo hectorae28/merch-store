@@ -7,9 +7,17 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
+      '@context': path.resolve(__dirname, 'src/context/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
+    },
   },
   module: {
     rules: [
@@ -44,14 +52,15 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html',
     }),
-
     new MiniCssExtractPlugin({
-      filename: 'assests[name].css',
+      filename: 'assets/[name].css',
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    static: path.join(__dirname, 'build'),
     compress: true,
+    historyApiFallback: true,
     port: 3000,
   },
+  mode: 'development',
 };

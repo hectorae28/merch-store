@@ -1,0 +1,17 @@
+.ProductCard{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    border: 1px #000 solid;
+    margin: 2.5% 0;
+    padding: 2.5% 1.5%;
+}
+.ProductCard img{
+    width: 100%;
+}
+.ProductInfo{
+    display: inherit;
+    flex-direction: column;
+    width: 100%;
+    align-self: flex-end;
+}
