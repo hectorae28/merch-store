@@ -8,4 +8,4 @@ build/
 .env.production.local
 node_modules/
 *.log
-credentials.js
+
