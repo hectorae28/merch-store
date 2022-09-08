@@ -1,0 +1,19 @@
+.Title{
+    font-family: 'Open Sans';
+    text-decoration: none;
+    color: #000;
+}
+.CheckoutButton{
+    color: #000;
+}
+.Header{
+    top: 0;
+    background-color: #9f76d3;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.Header a{
+    align-self: center;
+}

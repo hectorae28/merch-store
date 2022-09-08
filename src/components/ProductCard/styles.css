@@ -1,17 +1,45 @@
 .ProductCard{
     display: flex;
     flex-direction: column;
-    width: 45%;
-    border: 1px #000 solid;
-    margin: 2.5% 0;
-    padding: 2.5% 1.5%;
+    width: 20%;
+    border-radius: 1rem;
+    margin-top: 2.5%;
+    padding: 2.5% 1.5% 7% 1.5%;
+    background-color: #fff;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .ProductCard img{
-    width: 100%;
+    width: 80%;
+    align-self: center;
 }
 .ProductInfo{
     display: inherit;
     flex-direction: column;
     width: 100%;
     align-self: flex-end;
+    color:black;
+}
+.ButtonProductCard{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: #9f76d3;
+    border: #9f76d3;
+    height: 10%;
+    cursor: pointer;
+}
+.ButtonProductCard:hover{
+    background-color: #9168d0;
+}
+@media screen and (max-width: 992px){
+    .ProductCard{
+        width: 38%;
+        margin-top: 5%;
+        padding: 10% 5% 17%;
+    }
 }

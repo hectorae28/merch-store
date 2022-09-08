@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { Link } from 'react-router-dom';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import './styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Checkout = () => {
   const { state, deleteFromCart } = useContext(AppContext);
@@ -28,7 +30,7 @@ const Checkout = () => {
               <span>${item.price}</span>
             </div>
             <button type="button" onClick={() => handleDeleteFromCart(item)}>
-              Eliminar
+              <FontAwesomeIcon icon={faTrashCan} className="Trash" />
             </button>
           </div>
         ))}
