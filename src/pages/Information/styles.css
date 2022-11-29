@@ -1,20 +1,25 @@
 .Information {
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 2rem;
-    grid-row-gap: 1.5em;
-    display: grid;
-    margin: 0 0 4em 0;
+    display: flex;
   }
   .Information-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  .Information-content{
+    width: 65%;
+    padding: 2.5%;
+  }
   .Information-sidebar {
-    margin: 10px 0 0 0;
+    width: 25%;
+    padding: 2.5%;
   }
   .Information-back {
     margin: 10px 0 0 0;
+    color: #fff;
+  }
+  .Information-next{
+    cursor: pointer;
   }
   .Information-item {
     display: flex;
@@ -90,3 +95,18 @@
       display: block;
       outline: none;
   }
+@media screen and (max-width: 992px) {
+  .Information {
+    flex-direction: column-reverse;
+    padding: 5% 0;
+  }
+
+  .Information-content {
+    width: 95%;
+  }
+
+  .Information-sidebar {
+    width: 95%;
+  }
+
+}

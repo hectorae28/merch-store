@@ -1,9 +1,13 @@
 .Checkout {
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 2rem;
-    grid-row-gap: 1.5em;
-    display: grid;
-    padding: 0 0 4em 0;
+    display: flex;
+  }
+  .Checkout-content{
+    width: 65%;
+    padding: 2.5%;
+  }
+  .Checkout-sidebar{
+    width: 25%;
+    padding: 2.5%;
   }
   .Checkout-item {
     display: flex;
@@ -40,7 +44,7 @@
       border: 1px solid #3866a3;
       display: inline-block;
       cursor: pointer;
-      color: #14396a;
+      color: #fff;
       font-family: Arial;
       font-size: 15px;
       font-weight: bold;
@@ -58,4 +62,22 @@
 .Trash{
   color: #fff;
   margin: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width:992px) {
+  .Checkout {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .Checkout-content {
+    width: 95%;
+    padding: 2.5%;
+  }
+  .Checkout-sidebar {
+    width: 95%;
+    padding: 2.5%;
+    margin-top: 5%;
+  }
 }

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { useNavigate } from 'react-router-dom';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AppContext from '../../context/AppContext';
 import credentials from '../../../credentials';
 import './styles.css';
@@ -8,6 +10,17 @@ import './styles.css';
 const Payment = () => {
   const { state, addNewOrder } = useContext(AppContext);
   const { cart, buyer } = state;
+
+  const formatWameMessage=()=>{
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
+    if(buyer[0]){
+      const wameDirecction=
+      `hola quiero hacer un pedido%0Ami nombre es : ${buyer[0].name}%0Aestoy en : ${buyer[0].address}%0Ay quiero comprar:${cart.map(item=>'%0A- '+item.title+': '+item.price+'$')}%0APrecio Total:${cart.reduce(reducer, 0)} $`
+      return wameDirecction.split(' ').join('%20')
+    }else return 'Error'
+  }
+  
   const navigate = useNavigate();
   const paypalOptions = {
     clientId: credentials.paypal_clientId,
@@ -43,6 +56,9 @@ const Payment = () => {
             </div>
           </div>
         ))}
+        <h3>{`Precio Total: $ ${sumOfPrices()}`}</h3>
+      </div>
+      <div className="PayPalButtonContent">
         <PayPalButton
           amount={`${sumOfPrices()}`}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
@@ -55,6 +71,9 @@ const Payment = () => {
           }}
         />
       </div>
+      <a href={`http://wa.me/584129035408?text=${formatWameMessage()}`} target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faWhatsapp} className="whatsapp" width="500"/>
+      </a>
       <div />
     </div>
   );
