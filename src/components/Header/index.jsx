@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className="Header">
       <Link to="/">
-        <h1 className="Title">Merch Store</h1>
+        <h1 className="Title">Merch Store dev...</h1>
       </Link>
       <Link to="/checkout">
         <div className="CheckoutButton">
