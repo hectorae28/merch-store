@@ -1,6 +1,7 @@
+//require('dotenv').config()
 const credentials = {
   paypal_clientId:
-    'AVfgyzve1EBAP6IjlqHFjB7q4xOA7Fd4aCvfYWGoJ98Tx6MdtJcF9beaWU85w6UnhtpHz1FM0Cf8yfEu',
-  positionstack_access_key: '3d42b93b76ede1683d2b67cebfd2ed0b',
+    process.env.REACT_APP_PAYPAL_CLIENT_ID,
+  positionstack_access_key: process.env.REACT_APP_POSITIONSTACK_ACCESS_KEY,
 };
 export default credentials;
